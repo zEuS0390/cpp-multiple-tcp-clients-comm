@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.15)
+project(multiple_client_tcp_comm)
+add_executable(${PROJECT_NAME} "src/main.cpp" "src/server.cpp" "src/client.cpp")
+target_include_directories(${PROJECT_NAME} PUBLIC "include")
+target_link_libraries(${PROJECT_NAME} PUBLIC "ws2_32")
