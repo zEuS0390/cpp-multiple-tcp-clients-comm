@@ -72,11 +72,6 @@ bool server()
 		return false;
 	}
 
-	/*
-	std::thread keyloggerWorker(keylogger::process);
-	keyloggerWorker.detach();
-	*/
-
 	// Accept connection from clients
 	while (true)
 	{
@@ -85,12 +80,6 @@ bool server()
 
 		std::cout << "Waiting for an incoming client..." << std::endl;
 		ClientSocket = accept(ListenSocket, NULL, NULL);
-
-		/*
-		// Receive and send data
-		std::thread worker(serverSend, ClientSocket);	
-		worker.detach();
-		*/
 
 	}
 
@@ -109,45 +98,6 @@ void client()
 // Main function
 int main (int argc, char** argv)
 {
-	/*
-	if (argc != 2)
-	{
-		std::cerr << "Input file.\n";
-		return 1;
-	}
-	std::cout << "Done.\n";
-
-	const char* name = "Zeus James Baltazar\nWhat are you gonna do now?";
-	int sz = 100;
-	char x[sz+1];
-
-	std::istringstream stream(name);
-	std::ostringstream result;
-
-	memset(x, 0, sz+1);
-	while (!stream.eof())
-	{
-		stream.read(x, (int)(std::strlen(name)/4));
-		int bytes = stream.gcount();
-		std::cout << "Characters extracted: " << bytes << std::endl;
-		std::cout << "Current position: " << stream.tellg() << std::endl;
-		int n = 0;
-		while (n < sz+1)
-		{
-			if (x[n] != 0)
-			{
-				result << x[n];
-				std::cout << x[n];
-			}
-			++n;
-		}
-		std::cout << std::endl;
-		memset(x, 0, sz+1);
-	}
-
-	std::cout << result.str() << std::endl;
-
-	*/
 
 	const char* filename = "897160.jpg";
 	
