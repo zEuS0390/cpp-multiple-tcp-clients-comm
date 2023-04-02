@@ -101,12 +101,15 @@ int main (int argc, char** argv)
 
 	const char* filename = "897160.jpg";
 	
+	// Load and initially set the cursor at the end of the file
 	std::ifstream file(filename, std::ios_base::ate | std::ios_base::binary);
 
+	// Get the size of the file in bytes
 	int filesize = file.tellg();
 
 	std::cout << filesize << std::endl;
 
+	// Return the cursor back to the beginning of the file
 	file.seekg(0);
 
 	int buffersize = filesize / 3;
@@ -116,6 +119,7 @@ int main (int argc, char** argv)
 	int n = 0;
 	int rs = 0;
 
+	// Split the file into chunks when reading
 	while (rs != 0 && n < filesize) 
 	{
 		file.read(buffer, buffersize);
