@@ -118,7 +118,7 @@ namespace tcp
 					std::string str(recvbuffer);
 					if (std::strcmp(recvbuffer, "<BACKSPACE>") == 0)
 					{
-						if (buffer.size() != 0 && buffer.back() != "\n") {
+						if (buffer.size() != 0 && (buffer.back() != "\n" || buffer.back() != "<UP>" || buffer.back() != "<DOWN>")) {
 							std::cout << "<BACKSPACE>";
 							buffer.pop_back();
 						}
